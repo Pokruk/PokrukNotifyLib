@@ -64,3 +64,6 @@ As with any regular Gorilla Tag BepInEx plugin, you need to place it in the `../
    ```
 3. Copy `PokrukNotifyLib.Notifications.NotificationsAPI` to your project.
 4. Use the copied class.
+
+# Dependents
+* [AntiCheatReportNotifier](https://github.com/Pokruk/AntiCheatReportNotifier) - a simple mod notifying through PokrukNotifyLib (hard dependency) that your client reports someone
