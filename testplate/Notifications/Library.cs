@@ -42,7 +42,7 @@ namespace PokrukNotifyLib.Notifications {
             Instance = this;
         }
 
-        private void LateUpdate() {
+        public void OnUpdate() {
             if (instance == null && GameObject.Find("Main Camera") != null) {
                 Init();
                 instance = this;
@@ -160,6 +160,14 @@ namespace PokrukNotifyLib.Notifications {
         public void RemoveNotification(Notification notification) {
             notifications.Remove(notification);
             UpdateText();
+        }
+        
+        public void OnEnable() {
+            HarmonyPatcher.ApplyHarmonyPatches();
+        }
+
+        public void OnDisable() {
+            HarmonyPatcher.RemoveHarmonyPatches();
         }
     }
 }
