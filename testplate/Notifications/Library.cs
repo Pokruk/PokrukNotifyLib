@@ -44,7 +44,9 @@ namespace PokrukNotifyLib.Notifications {
 
         public void OnUpdate() {
             if (instance == null && GameObject.Find("Main Camera") != null) {
+                Debug.Log("preinit");
                 Init();
+                Debug.Log("postinit");
                 instance = this;
             }
 
@@ -53,8 +55,8 @@ namespace PokrukNotifyLib.Notifications {
                 MainCamera.transform.position.z);
             HUDObj2.transform.rotation = MainCamera.transform.rotation;
         }
-
-        private void Init() {
+        public bool ToHideOnCamera {get => HUDObj.layer == 19; set => HUDObj.layer = value ? 19 : 0;} 
+        public void Init() {
             MainCamera = GameObject.Find("Main Camera");
             HUDObj = new GameObject();
             HUDObj2 = new GameObject();

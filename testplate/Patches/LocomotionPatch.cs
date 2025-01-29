@@ -1,8 +1,8 @@
 ﻿using GorillaLocomotion;
 using HarmonyLib;
-using UnityEngine;
+using PokrukNotifyLib.Notifications;
 
-namespace PokrukNotifyLib.Notifications {
+namespace PokrukNotifyLib.Patches {
     [HarmonyPatch(typeof(Player), "LateUpdate")]
     public class LocomotionPatch {
         public static void Postfix() {

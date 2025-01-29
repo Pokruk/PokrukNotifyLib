@@ -27,5 +27,13 @@ namespace PokrukNotifyLib.Notifications {
         private static void SendInternal(string text, int clearMilliseconds = 1000) {
             NotifiLib.SendNotification(text, clearMilliseconds);
         }
+
+        public static void SetToHide(bool hide) {
+            if (enabled) SetToHideInternal(hide);
+        }
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void SetToHideInternal(bool hide) {
+            NotifiLib.Instance.ToHideOnCamera = hide;
+        }
     }
 }
