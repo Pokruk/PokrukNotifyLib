@@ -69,10 +69,8 @@ namespace PokrukNotifyLib.Notifications {
             canvas.renderMode = RenderMode.WorldSpace;
             canvas.worldCamera = MainCamera.GetComponent<Camera>();
             HUDObj.GetComponent<RectTransform>().sizeDelta = new Vector2(5f, 5f);
-            HUDObj.GetComponent<RectTransform>().position = new Vector3(MainCamera.transform.position.x,
-                MainCamera.transform.position.y, MainCamera.transform.position.z);
-            HUDObj2.transform.position = new Vector3(MainCamera.transform.position.x, MainCamera.transform.position.y,
-                MainCamera.transform.position.z - 4.6f);
+            HUDObj.GetComponent<RectTransform>().position = MainCamera.transform.position;
+            HUDObj2.transform.position = MainCamera.transform.position + new Vector3(0, 0, -4.6f);
             HUDObj.transform.parent = HUDObj2.transform;
             HUDObj.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 1.6f);
             var eulerAngles = HUDObj.GetComponent<RectTransform>().rotation.eulerAngles;
